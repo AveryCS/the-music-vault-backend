@@ -1,0 +1,39 @@
+
+.album{
+    text-align: center;
+}
+.allAlbums{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.requiredInputAlbum {
+    color: red;
+    visibility: hidden;
+    font-size: large;
+}
+.addNewAlbum{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.addNewAlbum:hover{
+    box-shadow: #caa55686 -5px 5px, #caa55648 -10px 10px, #caa55623 -15px 15px, #caa55610 -20px 20px, #caa55609 -25px 25px;
+}
+.addAlbum{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    align-items: baseline;
+}
+.addAlbum img{
+    margin-top: 20px;
+}
+

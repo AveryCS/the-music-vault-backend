@@ -1,0 +1,75 @@
+### Getting all albums
+GET http://localhost:8080/albums
+
+### Getting single album 
+GET http://localhost:8080/albums/9
+
+### Adding new album
+POST http://localhost:8080/albums/addAlbum
+Content-Type: application/json
+
+{
+    "title": "ham",
+    "imageUrl": "https://music.apple.com/us/album/the-writings-on-the-wall/266809606",
+    "recordLabel": "Columbia Records",
+    "songs":[]
+}
+
+### Deleting an album
+DELETE http://localhost:8080/albums/5
+
+### Adding a song to the album
+POST http://localhost:8080/albums/9/addSong
+Content-Type: application/json
+
+{
+  "title": "My Name Is Ham",
+  "link": "google.com",
+  "duration": 4,
+  "artist": "Destiny's Ham"
+}
+
+### Adding a comment to an album
+POST http://localhost:8080/albums/1/addComment
+Content-Type: application/json
+
+{
+  "comment": "Amazing!",
+  "author": "HAMJazz",
+  "rating": 5
+}
+
+### updating the title of the album
+PATCH http://localhost:8080/albums/1
+
+newAlbumTitle
+
+
+//songs
+
+### Getting all songs
+GET http://localhost:8080/songs
+
+### Getting single song
+GET http://localhost:8080/songs/23
+
+### Deleting a song
+DELETE http://localhost:8080/songs/23
+
+
+### Adding a comment to a song
+POST http://localhost:8080/songs/23/addComment
+Content-Type: application/json
+
+{
+  "comment": "Terrible!",
+  "author": "HAM",
+  "rating": 2
+}
+
+### updating the song title 
+PATCH http://localhost:8080/songs/2
+
+newSongTitle
+
+
