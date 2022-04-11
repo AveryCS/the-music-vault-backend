@@ -18,17 +18,17 @@ public class AlbumController {
     private SongRepository songRepo;
 
 
-    @GetMapping("http://the-music-vault.herokuapp.com/albums")
+    @GetMapping("/albums")
     public Iterable<Album> getAlbums(){
         return albumRepo.findAll();
     }
 
-    @GetMapping("http://the-music-vault.herokuapp.com/albums/{id}")
+    @GetMapping("/albums/{id}")
     public Album getAlbum(@PathVariable long id){
         return albumRepo.findById(id).get();
     }
 
-    @PostMapping("http://the-music-vault.herokuapp.com/albums/{id}/addSong")
+    @PostMapping("/albums/{id}/addSong")
     public Album getAlbum(@PathVariable long id, @RequestBody Song newSong){
         Album album = albumRepo.findById(id).get();
         newSong.setAlbum(album);
@@ -36,13 +36,13 @@ public class AlbumController {
         return album;
     }
 
-    @PostMapping("http://the-music-vault.herokuapp.com/albums/addAlbum")
+    @PostMapping("/albums/addAlbum")
     public Iterable<Album> addAlbum(@RequestBody Album newAlbum){
         albumRepo.save(newAlbum);
         return albumRepo.findAll();
     }
 
-    @PostMapping("http://the-music-vault.herokuapp.com/albums/addComment")
+    @PostMapping("/albums/{id}/addComment")
     public Album addCommentToAlbum(@PathVariable long id, @RequestBody Comment newComment) {
         Album newAlbum = albumRepo.findById(id).get();
         newAlbum.addComment(newComment);
@@ -57,13 +57,13 @@ public class AlbumController {
         return newAlbum;
     }
 
-    @DeleteMapping("http://the-music-vault.herokuapp.com/albums/{id}")
+    @DeleteMapping("/albums/{id}")
     public Iterable<Album> deleteAlbum(@PathVariable long id){
         albumRepo.delete(albumRepo.findById(id).get());
         return albumRepo.findAll();
     }
 
-    @PatchMapping("http://the-music-vault.herokuapp.com/albums/{id}")
+    @PatchMapping("/albums/{id}")
     public Iterable<Album> updateAlbum(@PathVariable long id, @RequestBody String title){
         Album album = albumRepo.findById(id).get();
         album.updateTitle(title);
